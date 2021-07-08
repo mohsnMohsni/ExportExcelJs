@@ -1,3 +1,11 @@
+function utf8_to_b64( str ) {
+  return window.btoa(unescape(encodeURIComponent( str )));
+}
+
+function b64_to_utf8( str ) {
+  return decodeURIComponent(escape(window.atob( str )));
+}
+
 let uri = "data:application/vnd.ms-excel;base64,",
   template = '<html><head><meta charset="UTF-8"></head><body><table>{table}</table></body></html>',
   base64 = function (s) {
